@@ -1,7 +1,8 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap'); */
-
+*{
+    box-sizing: border-box;
+}
 body {
-    height: 100%;
     font-family: 'Titan One', cursive;
     background: rgb(229,234,241);
     margin: 0;

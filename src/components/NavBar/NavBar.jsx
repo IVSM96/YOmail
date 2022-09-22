@@ -19,7 +19,7 @@ return(
                 </img>Написать</button>
         </Link>
         <wrapper>
-            {MENUITEMS.map(item => <MenuItems key={item.url} item={item}/>)}
+            {MENUITEMS.map(item => <MenuItems  key={item.url} item={item}/>)}
         </wrapper>
     </div>
 )

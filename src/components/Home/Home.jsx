@@ -1,8 +1,12 @@
 import React from "react"
 import "./Home.css"
+import { SEND_MESAGES } from "../../mocks"
+import { MesageItems } from "./Home_mesageItems"
 
 export const HomePage = () => {
     return(
-        <div className="home">HomePage</div>
+        <div className="home">
+            {SEND_MESAGES.mesages.map(mesage => <MesageItems mesage={mesage}/>)}
+        </div>
     )
 }

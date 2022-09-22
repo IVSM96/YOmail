@@ -1,5 +1,37 @@
 .home {
-    width: 70%;
+    width: 80%;
     border-radius: 0 10px 10px 0;
     background: rgb(255,255,255);
+}
+.mesageItem {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(229,229,229);
+    cursor: pointer;
+}
+.mesageItem_date {
+   color: rgb(226,229,232)
+}
+.mesageItem_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+}
+.mesageItem_title {
+    max-width: 300px;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.mesageItem_sender {
+    max-width: 200px;
+}
+.mesageItem_wrapper {
+    align-self: flex-end;
+    display: flex;
+    gap: 20px;
 }
