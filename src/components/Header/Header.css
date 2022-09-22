@@ -1,0 +1,17 @@
+.header {
+    margin: 20px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.header_user { 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header_logo {
+    font-size: xx-large;
+}
+.header_logo span {
+    color: red
+}
