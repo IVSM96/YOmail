@@ -6,9 +6,12 @@
     flex-direction: column;
     gap: 10px;
     background: rgb(245,247,249);
-    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px; 
     box-sizing: border-box;
 
+}
+.navBar_link{
+    text-decoration: none
 }
 .navBar_button {
     padding: 8px 0 8px 0;
@@ -22,6 +25,10 @@
     color: #FFF;
     background-color: rgb(64, 138, 231);
     cursor: pointer;
+    transition-delay: 0.15s;
+}
+.navBar_button:hover {
+    background-color: rgba(64, 138, 231, 0.8);
 }
 .menuItem {
     padding: 5px 10px 5px 10px;

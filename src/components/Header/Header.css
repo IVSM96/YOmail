@@ -8,10 +8,16 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 }
 .header_logo {
     font-size: xx-large;
+    cursor: pointer;
 }
 .header_logo span {
     color: red
+}
+
+.header_link {
+    text-decoration: none;
 }
