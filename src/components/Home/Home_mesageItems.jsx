@@ -6,7 +6,7 @@ export const MesageItems = ({mesage}) => {
         <div className="mesageItem">
            <div className="mesageItem_sender">{mesage.sender}</div>
             <div className="mesageItem_title">
-                {!mesage.read && <img src="./icons/dot.svg" width="20" height="20"></img>}
+                {!mesage.read && <img src="./icons/dot.svg" width="20" height="20" alt=""></img>}
                 {mesage.title}
             </div>
             <div className="mesageItem_wrapper">

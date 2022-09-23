@@ -71,9 +71,9 @@ export const SEND_MESAGES = {
     ]
 }
 export const MENUITEMS = [
-    {url: "./icons/incoming.svg", title: "Входящие", count: SEND_MESAGES.count},
-    {url: "./icons/send.svg", title: "Отправленные" },
-    {url: "./icons/delete.svg", title: "Удаленные" },
-    {url: "./icons/cancel.svg", title: "Спам" },
-    {url: "./icons/drafts.svg", title: "Черновики" }
+    {url: "./icons/incoming.svg", title: "Входящие", count: SEND_MESAGES.count, mapList: SEND_MESAGES.mesages},
+    {url: "./icons/send.svg", title: "Отправленные", count: '', mapList: []  },
+    {url: "./icons/delete.svg", title: "Удаленные", count: '', mapList: [] },
+    {url: "./icons/cancel.svg", title: "Спам", count: '', mapList: [] },
+    {url: "./icons/drafts.svg", title: "Черновики", count: '', mapList: [] }
 ]

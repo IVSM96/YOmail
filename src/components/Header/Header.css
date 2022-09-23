@@ -4,12 +4,13 @@
     justify-content: space-between;
 
 }
-.header_user { 
+.header_user {
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
 }
+
 .header_logo {
     font-size: xx-large;
     cursor: pointer;

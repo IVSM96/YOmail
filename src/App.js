@@ -1,7 +1,7 @@
 import React from "react"
 import "./App.css"
 import { HomePage } from "./components/Home/Home"
-import { Header } from "./components/Header/header"
+import { Header } from "./components/Header/Header"
 import { NavBar } from "./components/NavBar/NavBar"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import { CreateMailPage } from "./components/CreateMail/CreateMail"
