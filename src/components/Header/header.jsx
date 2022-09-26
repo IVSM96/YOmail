@@ -9,7 +9,7 @@ export const Header = () => {
             <Link className="header_link" to="/home"><div className="header_logo"><span>YO</span>mail</div></Link>
             <Link className="header_link" to="/login">
                 <div className="header_user">
-                    <div>test@yomail.ru</div>
+                    <div className="header_user__adress">test@yomail.ru</div>
                     <img src="./icons/account.svg" width="30" height="30" alt=""></img>
                 </div>
             </Link>           

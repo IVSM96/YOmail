@@ -1,11 +1,10 @@
 import React from "react"
 import "./NavBar.css"
-import { MenuItems } from "./NavBar_menuItems"
-import { MENUITEMS } from "../../mocks"
 import { Link } from "react-router-dom"
+import {MenuItems} from "./NavBar_menuItems"
 
 
-export const NavBar = () => {
+export const NavBar = ({menuItems}) => {
 return(
     <div className="navBar">
         <Link className="navBar_link" to="/create">
@@ -19,7 +18,7 @@ return(
                 </img>Написать</button>
         </Link>
         <wrapper>
-            {MENUITEMS.map(item => <MenuItems  key={item.url} item={item}/>)}
+            {menuItems.map(item => <Link className="navBar_link" to={item.link} key={item.title}><MenuItems item={item}/></Link>)}
         </wrapper>
     </div>
 )

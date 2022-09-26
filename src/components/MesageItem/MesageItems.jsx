@@ -1,4 +1,5 @@
 import React from "react"
+import "./MesageItems.css"
 
 
 export const MesageItems = ({mesage}) => {
@@ -13,7 +14,6 @@ export const MesageItems = ({mesage}) => {
                 <button className="mesageItem_button">Открыть письмо <img src="./icons/arrow_drop.svg" width="20" height="20" alt=""></img></button>
                 <div className="mesageItem_date">{mesage.dateTime}</div>   
             </div>
-           
         </div>
     )
 }
