@@ -12,7 +12,7 @@ export const Header = () => {
                     <div className="header_user__adress">test@yomail.ru</div>
                     <img src="./icons/account.svg" width="30" height="30" alt=""></img>
                 </div>
-            </Link>           
+            </Link>     
         </div>
     )
 }

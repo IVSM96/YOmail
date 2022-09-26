@@ -5,27 +5,34 @@ import { Header } from "./components/Header/Header"
 import { NavBar } from "./components/NavBar/NavBar"
 import { Switch, Route } from "react-router-dom"
 import { CreateMailPage } from "./components/Pages/CreateMailPage/CreateMail"
-import { MENUITEMS, INCOMING_MESAGES } from "./mocks"
+import { SPAM_MESAGES, SEND_MESAGES, MENUITEMS, REMOTE_MESAGES, INCOMING_MESAGES, DRAFTS_MESAGES } from "./mocks"
 import { SentPage } from "./components/Pages/SentMailPage/SentPage"
 import { RemotePage } from "./components/Pages/RemoteMailPage/RemotePage"
 import { SpamPage } from "./components/Pages/SpamMailPage/SpamPage"
 import { DraftsPage } from "./components/Pages/DraftsMailPage/DraftsPage"
+import { LoginPage } from "./components/Pages/LoginPage/LoginPage"
 
 
 class App extends Component {
     menuItems = MENUITEMS
+    currentUser = true
 
     constructor() {
         super()
         this.state = {
-            incoming: INCOMING_MESAGES       
+            incoming: INCOMING_MESAGES,
+            send: SEND_MESAGES,
+            spam: SPAM_MESAGES,
+            remote: REMOTE_MESAGES,
+            drafts: DRAFTS_MESAGES,       
         }
         
     }
 
 
     render() {
-        return(
+
+      if(this.currentUser) return(
             <div>
                 <Header/>    
                 <div className="wrapper">
@@ -41,6 +48,14 @@ class App extends Component {
                 </div>        
             </div>
         )
+        return(
+            <div>
+                <Switch>
+                    <Route path="/"><LoginPage currentUser={this.currentUser}/></Route>
+                </Switch>
+            </div>
+        )
+
     }
 } 
 

@@ -3,6 +3,21 @@ export const SEND_MESAGES = {
     mesages: []
 }
 
+export const SPAM_MESAGES = {
+    count: 0,
+    mesages: []
+}
+
+export const REMOTE_MESAGES = {
+    count: 0,
+    mesages: []
+}
+export const DRAFTS_MESAGES = {
+    count: 0,
+    mesages: []
+}
+
+
 
 export const INCOMING_MESAGES = {
     count: 8,
