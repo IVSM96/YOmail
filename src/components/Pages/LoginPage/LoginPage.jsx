@@ -3,11 +3,12 @@ import "./LoginPage.css"
 
 
 export class LoginPage extends React.Component {
-    currentUser = true
+    visible = false
 
     constructor() {
         super()
         this.state = {
+            currentUser: {adress: 'test@yomail.ru', password: ''},
             adress: '',
             password: '',
         }
@@ -28,7 +29,7 @@ export class LoginPage extends React.Component {
 render() {
     return(   
         <div className="wrapper_login">
-            {this.currentUser ? (
+            {this.visible ? (
             <form className="login" onSubmit={this.handlerSubmit}>
                 <div className="login_logo"><span>YO</span>mail</div>
                 <input
@@ -42,14 +43,14 @@ render() {
                     type="password"
                     value={this.state.password}
                     onChange={(event) => this.setState({password: event.target.value})}></input>
-                <button className="login_button" type="submit">Войти</button>
+                <button className="login_button" type="submit">Зарегистрироваться</button>
             </form>
             ):(
             <form className="login">
-                <div><span>YO</span>mail</div>
-                <input disabled={this.currentUser} value={this.currentUser.adress} type="text"></input>
+                <div className="login_logo"><span>YO</span>mail</div>
+                <input disabled={this.state.currentUser} value={this.state.currentUser.adress} type="text"></input>
                 <input placeholder="Введите пароль" type="password"></input>
-                <button type="submit">Зарегистрироваться</button>
+                <button className="login_button" type="submit">Войти</button>
             </form>   
             )}
            <img className="login_exit" src="./icons/close.svg" alt=""></img>

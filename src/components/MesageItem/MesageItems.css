@@ -17,13 +17,14 @@
 }
 .mesageItem_title {
     max-width: 300px;
+    min-width: 200px;
     text-overflow: ellipsis;
     display: flex;
     align-items: center;
     gap: 20px;
 }
 .mesageItem_sender {
-    max-width: 200px;
+    min-width: 200px;
 }
 .mesageItem_wrapper {
     align-self: flex-end;

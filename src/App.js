@@ -15,7 +15,7 @@ import { LoginPage } from "./components/Pages/LoginPage/LoginPage"
 
 class App extends Component {
     menuItems = MENUITEMS
-    currentUser = true
+    currentUser = false
 
     constructor() {
         super()
