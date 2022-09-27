@@ -57,3 +57,6 @@
     right: 1%;
     top: 1%;
 }
+.login_registration {
+    cursor: pointer;
+}

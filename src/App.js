@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import "./App.css"
 import { IncomingPage } from "./components/Pages/IncomingMailPage/IncomingPage"
-import { Header } from "./components/Header/Header"
+import {Header} from "./components/Header/header"
 import { NavBar } from "./components/NavBar/NavBar"
 import { Switch, Route } from "react-router-dom"
 import { CreateMailPage } from "./components/Pages/CreateMailPage/CreateMail"
@@ -24,7 +24,8 @@ class App extends Component {
             send: SEND_MESAGES,
             spam: SPAM_MESAGES,
             remote: REMOTE_MESAGES,
-            drafts: DRAFTS_MESAGES,       
+            drafts: DRAFTS_MESAGES,
+            currentUserID: '',       
         }
         
     }
@@ -51,7 +52,7 @@ class App extends Component {
         return(
             <div>
                 <Switch>
-                    <Route path="/"><LoginPage currentUser={this.currentUser}/></Route>
+                    <Route path="/"><LoginPage currentUserID={this.state.currentUserID} currentUser={this.currentUser}/></Route>
                 </Switch>
             </div>
         )
