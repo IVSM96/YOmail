@@ -12,7 +12,7 @@ export const MesageItems = ({mesage}) => {
             </div>
             <div className="mesageItem_wrapper">
                 <button className="mesageItem_button">Открыть письмо <img src="./icons/arrow_drop.svg" width="20" height="20" alt=""></img></button>
-                <div className="mesageItem_date">{mesage.dateTime}</div>   
+                <div className="mesageItem_date">{mesage.date}</div>   
             </div>
         </div>
     )

@@ -6,13 +6,12 @@ import { BASE_URL } from "../../../Api/base"
 
 export class LoginPage extends React.Component {
     
-    constructor(props) {
+    constructor() {
         super()
         this.state = {
             pageVersion: true,
             adress: '',
             password: '',
-            fetchCurrentUserID: props.currentUserID
         }
 
         this.handlerSubmit = this.handlerSubmit.bind(this)
@@ -30,11 +29,10 @@ export class LoginPage extends React.Component {
     login = async (user) => {
         try{
            await axios.post(`${BASE_URL}/user/login`, user)
-           .then(res => this.setState({fetchCurrentUserID: res.data}))
+           .then(res => localStorage.setItem("currentUser", JSON.stringify(res.data)))
         }catch {
             console.error("Не удалось войти в аккаунт!")
         }
-        console.log("currentUserId",this.state.fetchCurrentUserID)
     }
 
     handlerSubmit(event) {
