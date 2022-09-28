@@ -3,64 +3,79 @@ export const SEND_MESAGES = {
     mesages: []
 }
 
+export const SPAM_MESAGES = {
+    count: 0,
+    mesages: []
+}
+
+export const REMOTE_MESAGES = {
+    count: 0,
+    mesages: []
+}
+export const DRAFTS_MESAGES = {
+    count: 0,
+    mesages: []
+}
+
+
 
 export const INCOMING_MESAGES = {
     count: 8,
     mesages: [
         {
-            title: "Почему никому не нужны джуны",
+            title: "Закладки....",
             id: 1,
-            sender: "world@yomail.ru",
+            sender: "cloudMan@yomail.ru",
             recipient: "test@yomail.ru",
-            dateTime: "12.01.2019",
+            dateTime: "15.10.2020",
             read: false
         },
         {
-            title: "Крокодил ходит лежа",
+            title: "Закладки....",
             id: 2,
-            sender: "zooooofeal@yomail.ru",
+            sender: "cloudMan@yomail.ru",
             recipient: "test@yomail.ru",
-            dateTime: "12.01.2019",
+            dateTime: "15.10.2020",
             read: false
         },
         {
-            title: "Увеличение ЗП в it без СМС",
+            title: "Закладки....",
             id: 3,
-            sender: "info@quigane.ru",
+            sender: "cloudMan@yomail.ru",
             recipient: "test@yomail.ru",
-            dateTime: "02.12.2021",
+            dateTime: "15.10.2020",
             read: false
         },
         {
-            title: "Мобилизация для деда",
+            title: "Закладки....",
             id: 4,
-            sender: "voenkomat@yomail.ru",
+            sender: "cloudMan@yomail.ru",
             recipient: "test@yomail.ru",
-            dateTime: "21.09.2022",
+            dateTime: "15.10.2020",
             read: false
         },
         {
-            title: "Скидки на пиво",
+            title: "Закладки....",
             id: 5,
-            sender: "voenkomat@yomail.ru",
+            sender: "cloudMan@yomail.ru",
             recipient: "test@yomail.ru",
-            dateTime: "21.09.2022",
+            dateTime: "15.10.2020",
             read: false
         },
         {
-            title: "Ломаем жизнь, не дорого",
+            title: "Закладки....",
             id: 6,
-            sender: "voenkomat@yomail.ru",
+            sender: "cloudMan@yomail.ru",
             recipient: "test@yomail.ru",
-            dateTime: "21.09.2022",
+            dateTime: "15.10.2020",
             read: false
         },
         {
-            title: "Армяне играют в нарды",
+            title: "Закладки....",
             id: 7,
-            sender: "world@yomail.ru",
+            sender: "cloudMan@yomail.ru",
             recipient: "test@yomail.ru",
-            dateTime: "22.12.2019",
+            dateTime: "15.10.2020",
             read: false
         },
         {
