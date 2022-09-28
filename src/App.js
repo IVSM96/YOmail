@@ -11,11 +11,26 @@ import { RemotePage } from "./components/Pages/RemoteMailPage/RemotePage"
 import { SpamPage } from "./components/Pages/SpamMailPage/SpamPage"
 import { DraftsPage } from "./components/Pages/DraftsMailPage/DraftsPage"
 import { LoginPage } from "./components/Pages/LoginPage/LoginPage"
+import axios from "axios"
+import { BASE_URL } from "./Api/base"
 
 
 class App extends Component {
     menuItems = MENUITEMS
-    currentUser = false
+    currentUser = localStorage.getItem("currentUser")
+
+    componentDidMount() {
+       const FetchCurrentUserIncomingMessages = async () => {
+        await axios.get(`${BASE_URL}/messages/incoming/${this.currentUser}`)
+        .then(res => this.setState({incoming: res.data}))
+       }
+       const FetchCurrentUserSendMessages = async () => {
+        await axios.get(`${BASE_URL}/messages/sent/${this.currentUser}`)
+        .then(res => this.setState({send: res.data}))
+       }
+       FetchCurrentUserIncomingMessages()
+       FetchCurrentUserSendMessages()
+    }
 
     constructor() {
         super()
@@ -24,8 +39,7 @@ class App extends Component {
             send: SEND_MESAGES,
             spam: SPAM_MESAGES,
             remote: REMOTE_MESAGES,
-            drafts: DRAFTS_MESAGES,
-            currentUserID: '',       
+            drafts: DRAFTS_MESAGES,       
         }
         
     }
@@ -43,7 +57,7 @@ class App extends Component {
                         <Route path="/spam"><SpamPage/></Route>
                         <Route path="/remote"><RemotePage/></Route>
                         <Route path="/incoming"><IncomingPage incoming={this.state.incoming}/></Route>
-                        <Route path="/sent"><SentPage/></Route>
+                        <Route path="/sent"><SentPage send={this.state.send}/></Route>
                         <Route path="/create"><CreateMailPage/></Route>
                     </Switch>
                 </div>        
@@ -52,7 +66,7 @@ class App extends Component {
         return(
             <div>
                 <Switch>
-                    <Route path="/"><LoginPage currentUserID={this.state.currentUserID} currentUser={this.currentUser}/></Route>
+                    <Route path="/"><LoginPage currentUser={this.currentUser}/></Route>
                 </Switch>
             </div>
         )

@@ -1,5 +1,7 @@
 import React from "react"
 import "./CreateMail.css"
+import axios from "axios"
+import { BASE_URL } from "../../../Api/base"
 
 
 export class CreateMailPage extends React.Component {
@@ -19,14 +21,15 @@ export class CreateMailPage extends React.Component {
 
     handleSubmit(event) {
         const newMesage = {
-            user_id: '',
             title: this.state.title,
             body: this.state.body,
             recipient: this.state.recipient,
             sender: '',
         }
-        //Здесь будет логика отправки на бэк
-        console.log(newMesage)
+        const AddNewMesage = async () => {
+            await axios.post(`${BASE_URL}/message/create`, newMesage)
+        }
+        AddNewMesage()
         event.preventDefault()
     }
 
