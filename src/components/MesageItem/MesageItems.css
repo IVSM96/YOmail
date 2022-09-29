@@ -1,9 +1,17 @@
 .mesageItem {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(229,229,229);
+    
+}
+.mesageItem_wrapper__static {
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid rgb(229,229,229);
-    cursor: pointer;
+}
+.mesageItem_body {
+    padding: 10px;
+    border-top: 1px solid rgb(229,229,229);
 }
 .mesageItem_date {
    color: rgb(226,229,232)
@@ -14,14 +22,20 @@
     align-items: center;
     background: none;
     border: none;
+    cursor: pointer;
 }
 .mesageItem_title {
+    font-size: medium;
     max-width: 300px;
     min-width: 200px;
     text-overflow: ellipsis;
     display: flex;
-    align-items: center;
+    align-self: flex-start;
     gap: 20px;
+}
+.mesageItem_title div {
+    width: 20px;
+    height: 20px;
 }
 .mesageItem_sender {
     min-width: 200px;

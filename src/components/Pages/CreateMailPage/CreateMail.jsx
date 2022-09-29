@@ -6,9 +6,10 @@ import { BASE_URL } from "../../../Api/base"
 
 export class CreateMailPage extends React.Component {
         
-    constructor() {
+    constructor(props) {
         super()
         this.state = {
+            sender: props.currentUserAdress,
             title: '',
             body: '',
             recipient: '',
@@ -24,17 +25,19 @@ export class CreateMailPage extends React.Component {
             title: this.state.title,
             body: this.state.body,
             recipient: this.state.recipient,
-            sender: '',
+            sender: this.state.sender,
         }
         const AddNewMesage = async () => {
             await axios.post(`${BASE_URL}/message/create`, newMesage)
         }
+        console.log("newMesage:", newMesage)
+        console.log("state:", this.state.sender)
+        console.log("newMesage:", newMesage.sender)
         AddNewMesage()
         event.preventDefault()
     }
 
 render() {
-
     return( 
         <div className="create">
             <form onSubmit={this.handleSubmit} className="create_form">

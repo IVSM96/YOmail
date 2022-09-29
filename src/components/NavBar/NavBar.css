@@ -35,9 +35,10 @@
     align-items: center;
     background-color: none;
     text-decoration: none;
-    color: black;
+    color: rgb(141, 142, 149);
 }
 .menuItem:hover {
+    color: rgb(39, 37, 50);
     background-color: rgb(226,229,232);
     border-radius: 10px;
     cursor: pointer;

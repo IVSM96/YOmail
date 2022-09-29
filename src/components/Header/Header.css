@@ -23,5 +23,9 @@
     text-decoration: none;
 }
 .header_user__adress{ 
-    color: black;
+    cursor: pointer;
+    color: rgb(141, 142, 149)
+}
+.header_user__adress:hover {
+    color: rgb(39, 37, 50);
 }

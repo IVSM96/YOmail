@@ -6,12 +6,13 @@ import { BASE_URL } from "../../../Api/base"
 
 export class LoginPage extends React.Component {
     
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            pageVersion: true,
+            pageVersion: false,
             adress: '',
             password: '',
+            validateAddresError: '',
         }
 
         this.handlerSubmit = this.handlerSubmit.bind(this)
@@ -19,17 +20,21 @@ export class LoginPage extends React.Component {
 
     createNewUser = async (newUser) => {
         try{
-            await axios.post(`${BASE_URL}/user/create`, newUser)  
+            await axios.post(`${BASE_URL}/user/create`, newUser)
         }catch {
             console.error("Не удалось зарегистрировать нового пользователя!")
         }
+        console.log("front",this.state.validateAddresError)
         
     }
 
     login = async (user) => {
         try{
            await axios.post(`${BASE_URL}/user/login`, user)
-           .then(res => localStorage.setItem("currentUser", JSON.stringify(res.data)))
+           .then(res => {
+                localStorage.setItem("currentUserId", JSON.stringify(res.data.id))
+                localStorage.setItem("currentUserAdress", JSON.stringify(res.data.address))
+            })
         }catch {
             console.error("Не удалось войти в аккаунт!")
         }
@@ -53,9 +58,6 @@ export class LoginPage extends React.Component {
         if(this.state.pageVersion === false) {
             this.login(user)
         }
-    
-        console.log(user)
-        console.log(this.state.pageVersion)
         event.preventDefault()
     }
 
@@ -70,6 +72,7 @@ render() {
                     value={this.state.adress}
                     onChange={(event) => this.setState({adress: event.target.value})}>
                 </input>
+                {this.state.validateAddresError && <div>{this.state.validateAddresError}</div>}
                 <input 
                     placeholder="Введите пароль" 
                     type="password"
