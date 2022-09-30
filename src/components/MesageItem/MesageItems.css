@@ -17,6 +17,7 @@
    color: rgb(226,229,232)
 }
 .mesageItem_button {
+    color: rgb(141, 142, 149);
     display: flex;
     justify-content: center;
     align-items: center;

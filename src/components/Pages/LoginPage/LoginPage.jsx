@@ -1,44 +1,23 @@
 import React from "react"
 import "./LoginPage.css"
-import axios from "axios"
-import { BASE_URL } from "../../../Api/base"
-
 
 export class LoginPage extends React.Component {
     
     constructor(props) {
         super(props)
         this.state = {
+            createNewUser: props.createNewUser,
+            login: props.login,
             pageVersion: false,
             adress: '',
             password: '',
             validateAddresError: '',
+            error: '',
         }
 
         this.handlerSubmit = this.handlerSubmit.bind(this)
     }
 
-    createNewUser = async (newUser) => {
-        try{
-            await axios.post(`${BASE_URL}/user/create`, newUser)
-        }catch {
-            console.error("Не удалось зарегистрировать нового пользователя!")
-        }
-        console.log("front",this.state.validateAddresError)
-        
-    }
-
-    login = async (user) => {
-        try{
-           await axios.post(`${BASE_URL}/user/login`, user)
-           .then(res => {
-                localStorage.setItem("currentUserId", JSON.stringify(res.data.id))
-                localStorage.setItem("currentUserAdress", JSON.stringify(res.data.address))
-            })
-        }catch {
-            console.error("Не удалось войти в аккаунт!")
-        }
-    }
 
     handlerSubmit(event) {
         
@@ -52,11 +31,11 @@ export class LoginPage extends React.Component {
         }
 
         if(this.state.pageVersion === true) {
-            this.createNewUser(newUser)
+            this.state.createNewUser(newUser)
         }
 
         if(this.state.pageVersion === false) {
-            this.login(user)
+            this.state.login(user)
         }
         event.preventDefault()
     }
@@ -87,7 +66,6 @@ render() {
                     className="login_registration">{this.state.pageVersion ? "Войти" : "Зарегистрироваться"}
                 </div>
             </form>
-           <img className="login_exit" src="./icons/close.svg" alt=""></img>
         </div>
     )
 }

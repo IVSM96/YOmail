@@ -9,7 +9,7 @@ export class CreateMailPage extends React.Component {
     constructor(props) {
         super()
         this.state = {
-            sender: props.currentUserAdress,
+            sender: props.sender,
             title: '',
             body: '',
             recipient: '',

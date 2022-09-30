@@ -42,7 +42,7 @@ export class MesageItems extends React.Component  {
                     <button
                         className="mesageItem_button" 
                         onClick={this.fetchMailBody}>
-                        {this.state.visibleBody ? "Закрыть письмо" : "Открыть письмо"} 
+                        {this.state.visibleBody ? "закрыть письмо" : "открыть письмо"} 
                         <img src="./icons/arrow_drop.svg" width="20" height="20" alt=""></img>
                     </button>
                     <div className="mesageItem_date">{this.state.mesage.date}</div>   
